@@ -15,8 +15,8 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
-    "db:exec:local": "sh -c 'wrangler d1 execute bfr --local --file ./src/db/migrations/$1' --",
-    "db:exec:remote": "sh -c 'wrangler d1 execute bfr --remote --file ./src/db/migrations/$1' --"
+    "db:exec:local": "sh -c 'wrangler d1 execute rahab-gostar-db --local --file ./src/db/migrations/$1' --",
+    "db:exec:remote": "sh -c 'wrangler d1 execute rahab-gostar-db --remote --file ./src/db/migrations/$1' --"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
