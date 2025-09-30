@@ -21,6 +21,16 @@
       "binding": "DB",
       "database_id": "7f15e578-1a41-48e6-b7b6-3e08d26f0ffa"
     }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "NEXT_INC_CACHE_R2_BUCKET",
+      "bucket_name": "rahab-gostar-cache"
+    },
+    {
+      "binding": "ASSETS_BUCKET",
+      "bucket_name": "rahab-gostar" // <- must exist in R2
+    }
   ]
   /**
    * Smart Placement
