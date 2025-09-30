@@ -21,7 +21,8 @@ const layout = async ({ children }: { children: ReactNode }) => {
 
       <main className="flex-1 p-4">
         <SidebarTrigger />
-        {children}
+
+        <section className="mt-2">{children}</section>
       </main>
     </SidebarProvider>
   );

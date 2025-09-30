@@ -4,9 +4,15 @@ import {
   SidebarFooter,
   SidebarGroup,
   SidebarHeader,
+  SidebarMenu,
   SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
-import { Crown } from "lucide-react";
+import { Crown, ImageIcon, LayoutDashboardIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function AppSidebar() {
   return (
@@ -27,10 +33,35 @@ export default function AppSidebar() {
         </SidebarMenuButton>
       </SidebarHeader>
       <SidebarContent>
-        <SidebarGroup />
-        <SidebarGroup />
+        <SidebarGroup>
+          <SidebarMenu className="gap-2">
+            {SIDEBAR_PAGES.map((item) => (
+              <SidebarMenuItem key={item.title}>
+                <SidebarMenuButton asChild>
+                  <Link href={item.url} className="font-medium">
+                    {item.icon}
+                    {item.title}
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
+          </SidebarMenu>
+        </SidebarGroup>
       </SidebarContent>
       <SidebarFooter />
     </Sidebar>
   );
 }
+
+const SIDEBAR_PAGES = [
+  {
+    title: "داشبورد",
+    url: "/dashboard",
+    icon: <LayoutDashboardIcon />,
+  },
+  {
+    title: "عکس واریزی ها",
+    url: "/dashboard/photos",
+    icon: <ImageIcon />,
+  },
+];
