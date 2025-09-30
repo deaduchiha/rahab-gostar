@@ -3,8 +3,8 @@ import { sqliteTable, text, index, integer } from "drizzle-orm/sqlite-core";
 
 const uuid = () => crypto.randomUUID();
 
-export const users = sqliteTable(
-  "users",
+export const invoices = sqliteTable(
+  "invoices",
   {
     id: text("id").primaryKey().$defaultFn(uuid), // e.g. uuid
     description: text("description"),
