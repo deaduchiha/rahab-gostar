@@ -13,7 +13,7 @@ import Image from "next/image";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const Page = () => {
-  const { data, isLoading, error } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["invoices"],
     queryFn: get_invoices,
   });

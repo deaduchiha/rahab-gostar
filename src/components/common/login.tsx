@@ -16,7 +16,6 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
-import { ofetch } from "ofetch";
 import { api } from "@/lib/api";
 
 export default function Login() {
