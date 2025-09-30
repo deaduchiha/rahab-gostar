@@ -43,7 +43,3 @@ export const POST = async (request: Request) => {
     );
   }
 };
-
-// export const DELETE = async () => {
-//   return new Response("Hello, world!");
-// };
