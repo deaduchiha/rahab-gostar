@@ -15,7 +15,7 @@ export async function GET() {
 
       await db.insert(users).values({
         id: crypto.randomUUID(),
-        username: "bahman",
+        username: "ahoora",
         password: hashedPassword,
       });
     }
