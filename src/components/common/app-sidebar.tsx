@@ -8,7 +8,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { Crown, ImageIcon, LayoutDashboardIcon } from "lucide-react";
+import { Crown, FileIcon, LayoutDashboardIcon } from "lucide-react";
 import Link from "next/link";
 
 export default function AppSidebar() {
@@ -57,8 +57,8 @@ const SIDEBAR_PAGES = [
     icon: <LayoutDashboardIcon />,
   },
   {
-    title: "عکس واریزی ها",
-    url: "/dashboard/photos",
-    icon: <ImageIcon />,
+    title: "فاکتورها",
+    url: "/dashboard/invoices",
+    icon: <FileIcon />,
   },
 ];
