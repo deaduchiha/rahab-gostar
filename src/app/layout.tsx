@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
+import Providers from "./providers";
 
 const vazirmatn = Vazirmatn({
   subsets: ["arabic"],
@@ -23,8 +24,8 @@ export default function RootLayout({
       <body
         className={`${vazirmatn.variable} ${vazirmatn.className} antialiased`}
       >
-        {children}
-        <Toaster />
+        <Providers>{children}</Providers>
+        <Toaster style={{ fontFamily: "unset" }} />
       </body>
     </html>
   );
