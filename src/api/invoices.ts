@@ -14,3 +14,6 @@ export const add_invoice = (data: TInvoiceSchema): Promise<TInvoice> => {
     body: formData,
   });
 };
+
+export const get_image = (image: string): Promise<string> =>
+  api(`/api/r2/${String(image).trim()}`);
