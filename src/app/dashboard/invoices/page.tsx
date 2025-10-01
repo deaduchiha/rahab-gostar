@@ -1,11 +1,5 @@
 "use client";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+
 import { useQuery } from "@tanstack/react-query";
 import { get_invoices } from "@/api/invoices";
 import {
@@ -16,11 +10,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import Image from "next/image";
-import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { Clipboard, PlusIcon } from "lucide-react";
 import { toast } from "sonner";
+import ImagePreview from "@/components/dashboard/invoices/image-preview";
+import MockSkeleton from "@/components/dashboard/invoices/mocked-table";
 
 const Page = () => {
   const { data, isLoading } = useQuery({
@@ -102,50 +96,3 @@ const Page = () => {
 };
 
 export default Page;
-
-const MockSkeleton = () => {
-  return Array.from({ length: 5 }).map((_, index) => (
-    <TableRow key={index}>
-      <TableCell>
-        <Skeleton className="w-1/2 h-8 rounded-lg" />
-      </TableCell>
-      <TableCell>
-        <Skeleton className="w-1/2 h-8 rounded-lg" />
-      </TableCell>
-      <TableCell>
-        <Skeleton className="w-1/2 h-8 rounded-lg" />
-      </TableCell>
-      <TableCell>
-        <Skeleton className="w-1/2 h-8 rounded-lg" />
-      </TableCell>
-    </TableRow>
-  ));
-};
-
-const ImagePreview = ({ image }: { image: string }) => {
-  return (
-    <Dialog>
-      <DialogTrigger>
-        <Image
-          className="rounded-lg w-auto h-auto"
-          src={image}
-          width={52}
-          height={52}
-          alt={image.split("/").pop() || "image"}
-        />
-      </DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>مشاهده عکس</DialogTitle>
-        </DialogHeader>
-        <Image
-          className="rounded-lg w-full h-auto"
-          src={image}
-          width={1080}
-          height={1080}
-          alt={image.split("/").pop() || "image"}
-        />
-      </DialogContent>
-    </Dialog>
-  );
-};
