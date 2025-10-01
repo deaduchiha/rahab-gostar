@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "rahabgostar.ir",
       },
+      new URL("https://rahabgostar.ir/**"),
     ],
   },
 };
