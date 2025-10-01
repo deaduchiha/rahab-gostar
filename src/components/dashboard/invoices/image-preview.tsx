@@ -12,7 +12,7 @@ const ImagePreview = ({ image }: { image: string }) => {
     <Dialog>
       <DialogTrigger>
         <Image
-          className="rounded-lg w-auto h-auto"
+          className="rounded-lg w-auto h-auto max-h-9"
           src={image}
           width={52}
           height={52}
