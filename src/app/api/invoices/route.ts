@@ -1,3 +1,4 @@
+import { getCurrentUser } from "@/auth";
 import { getDb } from "@/db";
 import { invoices } from "@/db/schema";
 import { uploadImage } from "@/lib/upload-image";
@@ -21,6 +22,15 @@ export const GET = async () => {
 
 export const POST = async (request: NextRequest) => {
   try {
+    const user = await getCurrentUser();
+
+    if (!user) {
+      return Response.json(
+        { message: "لطفا وارد حساب کاربری خود شوید." },
+        { status: 401 }
+      );
+    }
+
     const db = await getDb();
 
     const formdata = await request.formData();

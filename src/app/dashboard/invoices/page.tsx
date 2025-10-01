@@ -49,7 +49,13 @@ const Page = () => {
                 <TableCell>{index + 1}</TableCell>
                 <TableCell className="max-w-12">
                   <ImagePreview
-                    image={`/api/r2/${String(item.photo).trim()}`}
+                    image={
+                      process.env.NODE_ENV === "development"
+                        ? `/api/r2/${String(item.photo).trim()}`
+                        : `https://rahabgostar.ir/api/r2/${String(
+                            item.photo
+                          ).trim()}`
+                    }
                   />
                 </TableCell>
                 <TableCell className="max-w-10 truncate text-xs">
