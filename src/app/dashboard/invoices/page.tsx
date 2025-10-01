@@ -11,10 +11,11 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { Clipboard, PlusIcon } from "lucide-react";
+import { Clipboard } from "lucide-react";
 import { toast } from "sonner";
 import ImagePreview from "@/components/dashboard/invoices/image-preview";
 import MockSkeleton from "@/components/dashboard/invoices/mocked-table";
+import AddInvoice from "@/components/dashboard/invoices/add-invoice";
 
 const Page = () => {
   const { data, isLoading } = useQuery({
@@ -26,10 +27,7 @@ const Page = () => {
     <div>
       <div className="flex justify-between items-center">
         <h1 className="text-lg font-bold">فاکتورها</h1>
-        <Button>
-          <PlusIcon className="w-4 h-4" />
-          افزودن فاکتور
-        </Button>
+        <AddInvoice />
       </div>
 
       <Table className="border mt-8">
