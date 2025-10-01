@@ -45,7 +45,10 @@ export const POST = async (request: NextRequest) => {
       photo: photo || "",
     });
 
-    return Response.json(invoice);
+    return Response.json({
+      message: "فاکتور با موفقیت اضافه شد",
+      link: photo,
+    });
   } catch (error) {
     console.log(error);
 

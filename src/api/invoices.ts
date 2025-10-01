@@ -4,7 +4,9 @@ import { TInvoice } from "@/types/invoices";
 
 export const get_invoices = (): Promise<TInvoice[]> => api("/api/invoices");
 
-export const add_invoice = (data: TInvoiceSchema): Promise<TInvoice> => {
+export const add_invoice = (
+  data: TInvoiceSchema
+): Promise<{ link: string }> => {
   const formData = new FormData();
   formData.append("description", data.description ?? "");
   formData.append("image", data.image);

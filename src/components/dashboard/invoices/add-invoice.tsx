@@ -42,8 +42,15 @@ const AddInvoice = () => {
 
   const onSubmit = form.handleSubmit((values) => {
     mutate(values, {
-      onSuccess: () => {
-        toast.success("فاکتور با موفقیت اضافه شد");
+      onSuccess: (data) => {
+        toast.success("فاکتور با موفقیت اضافه شد", {
+          description: "لینک عکس در کیپلورد کپی شد",
+        });
+
+        navigator.clipboard.writeText(
+          `https://rahabgostar.ir/api/r2/${String(data.link).trim()}`
+        );
+
         qc.invalidateQueries({ queryKey: ["invoices"] });
         form.reset();
         setOpen(false);
