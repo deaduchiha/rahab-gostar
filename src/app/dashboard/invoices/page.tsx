@@ -28,7 +28,7 @@ const Page = () => {
             <TableHead>ردیف</TableHead>
             <TableHead>عکس</TableHead>
             <TableHead>توضیحات</TableHead>
-            <TableHead>تاریخ</TableHead>
+            <TableHead>تاریخ ایجاد</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -38,7 +38,7 @@ const Page = () => {
             data?.map((item, index) => (
               <TableRow key={item.id}>
                 <TableCell>{index + 1}</TableCell>
-                <TableCell>
+                <TableCell className="max-w-12">
                   <Image
                     className="rounded-lg w-auto h-auto"
                     src={`/api/r2/${String(item.photo).trim()}`}
@@ -47,10 +47,10 @@ const Page = () => {
                     alt={item.description}
                   />
                 </TableCell>
-                <TableCell className="max-w-10 truncate">
+                <TableCell className="max-w-10 truncate text-xs">
                   {item.description}
                 </TableCell>
-                <TableCell>
+                <TableCell className="text-xs">
                   {new Date(item.createdAt).toLocaleString("fa-IR", {
                     year: "numeric",
                     month: "long",
